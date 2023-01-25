@@ -1,12 +1,11 @@
-def computepay(h, r):
-    if h<=40:
-         p=h*r
-    elif h>40:
-        p=(h-40)*1.5*r+40*r
-    return p
-hrs = input("Enter Hours:")
-rate=input("Enter Rate: ")
-xh=float(hrs)
+def computepay(hh, rr):
+    if hh<40:
+        gross_pay=hh*rr
+    else:
+        gross_pay=(40+(hh-40)*1.5)*rr
+    return gross_pay
+hours=input("Enter hours of work: ")
+rate=input("Enter rate: ")
+xh=float(hours)
 xr=float(rate)
-p = computepay(xh, xr)
-print("Pay", p)
+print("Pay", computepay(xh,xr))
