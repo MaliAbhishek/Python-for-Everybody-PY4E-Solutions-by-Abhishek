@@ -1,16 +1,17 @@
-# Use the file name mbox-short.txt as the file name
-fname = input("Enter file name: ")
-fh = open(fname)
-count=0
-xc=0
-for line in fh:
-    #print(line.upper())
-    if not line.startswith("X-DSPAM-Confidence:"):
-        continue
-    #counting the nuber of lines
-    count=count+1
-    #adding confidence level
-    Xconf=float(line[20:])
-    xc=xc+Xconf
-xav=xc/count
-print("Average spam confidence:", xav)
+import numpy as np 
+score =input("Enter a score: ")
+try:
+    x=float(score)
+except:
+    x=-1
+x=x/100
+y=np.around(np.arange(0.6,1.1,0.1),2)
+grade=["F", "D", "C", "B", "A"]
+res=dict(zip(y,grade))
+if 0.0<=x<=1.0:
+   for i in y:
+       if x<i:
+           print(res[i]) 
+           break
+else:
+    print("out of range")
