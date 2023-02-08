@@ -1,17 +1,26 @@
-import numpy as np 
-score =input("Enter a score: ")
-try:
-    x=float(score)
-except:
-    x=-1
-x=x/100
-y=np.around(np.arange(0.6,1.1,0.1),2)
-grade=["F", "D", "C", "B", "A"]
-res=dict(zip(y,grade))
-if 0.0<=x<=1.0:
-   for i in y:
-       if x<i:
-           print(res[i]) 
-           break
-else:
-    print("out of range")
+import random
+def fib(a):
+    i=0
+    x=[]
+    for i in range(a):
+        if i<=1:
+            x.append(1)
+        else:
+          x.append(x[i-1]+x[i-2])
+        i+=1
+    return(x)
+a=input("Enter number of elemnts required in a Fibonacci series: ")
+a=int(a)
+y=fib(a)   
+random.shuffle(y)
+print(y)
+j=0
+for i in range(len(y)):
+    for j in range(i+1, len(y)):    
+        if(y[i] < y[j]):    
+            temp = y[i]    
+            y[i] = y[j]    
+            y[j] = temp
+print(y)
+
+
