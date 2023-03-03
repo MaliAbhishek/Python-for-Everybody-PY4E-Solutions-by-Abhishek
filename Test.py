@@ -17,10 +17,9 @@ print(y)
 j=0
 for i in range(len(y)):
     for j in range(i+1, len(y)):    
-        if(y[i] < y[j]):    
+        if(y[i] > y[j]):    
             temp = y[i]    
             y[i] = y[j]    
             y[j] = temp
 print(y)
-
 
