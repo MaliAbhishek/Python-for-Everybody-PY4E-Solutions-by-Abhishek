@@ -14,7 +14,6 @@ a=int(a)
 y=fib(a)   
 random.shuffle(y)
 print(y)
-j=0
 for i in range(len(y)):
     for j in range(i+1, len(y)):    
         if(y[i] > y[j]):    
