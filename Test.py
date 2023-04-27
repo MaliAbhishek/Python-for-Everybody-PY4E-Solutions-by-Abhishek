@@ -1,24 +1,12 @@
-import random
-def fib(a):
-    i=0
-    x=[]
-    for i in range(a):
-        if i<=1:
-            x.append(1)
-        else:
-          x.append(x[i-1]+x[i-2])
-        i+=1
-    return(x)
-a=input("Enter number of elemnts required in a Fibonacci series: ")
-a=int(a)
-y=fib(a)   
-random.shuffle(y)
-print(y)
-for i in range(len(y)):
-    for j in range(i+1, len(y)):    
-        if(y[i] > y[j]):    
-            temp = y[i]    
-            y[i] = y[j]    
-            y[j] = temp
-print(y)
-
+data="hostel12-students mailing list hostel12-students@iitb.ac.in https://lists.iitb.ac.in/mailman/listinfo/hostel12-students"
+atpos=data.find("@")
+i=0
+while i<atpos:
+    j=data.find(' ', i, atpos)
+    i=j+1
+    if j==-1:
+        break
+    else:
+        st=j 
+ed=data.find(' ', atpos)
+print(data[st+1:ed])
